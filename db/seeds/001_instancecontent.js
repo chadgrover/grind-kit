@@ -8,7 +8,7 @@ const { response } = require("express");
 exports.seed = async function(knex) {
   await knex('instancecontent_table').del()
   
-  const arrayOfInstanceContentObjects = await axios.get ("https://xivapi.com/InstanceContent/", { mode: 'cors' })
+  const arrayOfInstanceContentObjects = await axios.get (`https://xivapi.com/InstanceContent?private_key=${process.env.private_key}`, { mode: 'cors' })
     .then(response => response.data)
     .then(data => data["Results"]);
     
