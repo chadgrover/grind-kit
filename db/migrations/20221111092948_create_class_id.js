@@ -17,6 +17,6 @@ exports.up = async function (knex) {
  */
 exports.down = async function (knex) {
   return await knex.schema.table('user_table', (table) => {
-  table.dropColumn('class_id');
+    table.dropColumn('class_id');
   });
 };
