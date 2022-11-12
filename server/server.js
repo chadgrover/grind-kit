@@ -10,13 +10,17 @@ function setupServer() {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-  app.get("/instancecontent", async (req, res) => {
+  // GET
+
+  app.get("/api/instancecontent", async (req, res) => {
     try {
       const data = await db("twg")
         .select("*")
         .from("instancecontent_table")
         .timeout(1500);
-      res.status(200).send(data);
+      data.length > 0
+      ? res.status(200).send(data)
+      : res.status(404).send('No data found');
     } catch (error) {
       res.status(500).send(error);
     }
