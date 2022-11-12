@@ -2,8 +2,8 @@
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
- exports.up = function(knex) {
-    return knex.schema.createTable('class_table', (table) => {
+ exports.up = async function(knex) {
+    return await knex.schema.createTable('class_table', (table) => {
       table.increments('id').primary();
       table.integer('pld_level', 2).notNullable();
       table.integer('war_level', 2).notNullable();
@@ -31,7 +31,7 @@
    * @param { import("knex").Knex } knex
    * @returns { Promise<void> }
    */
-  exports.down = function(knex) {
-    return knex.schema.dropTable('class_table');
+  exports.down = async function(knex) {
+    return await knex.schema.dropTable('class_table');
   };
   

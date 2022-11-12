@@ -1,5 +1,4 @@
 const setupServer = require("./server");
-//const db = require("")
 const PORT = process.env.port || 4000;
 const server = setupServer();
 
