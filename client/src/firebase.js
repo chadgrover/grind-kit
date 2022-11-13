@@ -1,21 +1,21 @@
 import { initializeApp } from "firebase/app";
-​​import {
-​​  GoogleAuthProvider,
-​​  getAuth,
-​​  signInWithPopup,
-​​  signInWithEmailAndPassword,
-​​  createUserWithEmailAndPassword,
-​​  sendPasswordResetEmail,
-​​  signOut,
-​​} from "firebase/auth";
-​​import {
-​​  getFirestore,
-​​  query,
-​​  getDocs,
-​​  collection,
-​​  where,
-​​  addDoc,
-​​} from "firebase/firestore";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
+  signOut,
+} from "firebase/auth";
+import {
+  getFirestore,
+  query,
+  getDocs,
+  collection,
+  where,
+  addDoc,
+} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDY6yCMc2A0RnDZdMefY3WapXIVkMqQ2Gs",
@@ -27,9 +27,9 @@ const firebaseConfig = {
     measurementId: "G-4B8J0LJFEF"
   };
 
-const app = ​​initializeApp(firebaseConfig);
-​​const auth = getAuth(app);
-​​const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
