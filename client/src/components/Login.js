@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
   auth,
-  signInWithEmailAndPassword,
+  logInWithEmailAndPassword,
   signInWithGoogle,
 } from "../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -43,7 +43,7 @@ function Login () {
         />
         <button
           className="login__btn"
-          onClick={() => signInWithEmailAndPassword(email, password)}
+          onClick={() => logInWithEmailAndPassword(email, password)}
         >
           Login
         </button>
