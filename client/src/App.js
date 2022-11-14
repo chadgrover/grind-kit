@@ -1,12 +1,11 @@
 import "./App.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Reset from "./components/Reset";
 import Dashboard from "./components/Dashboard";
-import LevelInput from "./components/LevelInput";
 
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
