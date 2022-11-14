@@ -1,14 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { logout } from "../firebase";
 
-export default function NavBar({ isOpen }) {
+function NavBar({ isOpen }) {
   return (
     <>
       {isOpen === true ? (
-        <Link to="/levelinput">Job Levels</Link>
+        <div>
+          <nav>
+            <Link to="/levelinput">Job Levels</Link>
+          </nav>
+        </div>
       ) : (
-        <p>Grind-Kit</p>
+        <div>
+          <p>Grind Kit Logo</p>
+        </div>
       )}
     </>
   );
 }
+
+export default NavBar;
