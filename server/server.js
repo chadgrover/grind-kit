@@ -18,8 +18,8 @@ function setupServer() {
         .select("*")
         .timeout(1500);
       data.length > 0
-      ? res.status(200).send(data)
-      : res.status(404).send('No data found');
+        ? res.status(200).send(data)
+        : res.status(404).send("No data found");
     } catch (error) {
       res.status(500).send(error);
     }
@@ -27,15 +27,14 @@ function setupServer() {
 
   // POST
 
-  app.post("/post/:id/:className/:classLevel", async (req, res) => {
+  app.post("/post", async (req, res) => {
     try {
-      const { id, className, classLevel } = req.params;
-
-      const table = await db("class_table")
-        .join('user_table', 'user_table.id', 'class_table.user_id')
-        .select(`${className}`)
-        .where({user_id: id})
-        .insert(classLevel);
+      const { uid } = req;
+      const data = await db("user_table")
+        .select("*")
+        .where({ user_id: uid })
+        .insert(req.body)
+        .timeout(1500);
       res.status(201).send("Success");
     } catch (error) {
       res.status(500).send(error);

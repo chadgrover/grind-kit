@@ -8,7 +8,7 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../styles/Login.css";
 
-function Login () {
+function Login ({ setIsOpen }) {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,8 +17,9 @@ function Login () {
   const navigate = useNavigate();
 
   useEffect(() => {
+    setIsOpen(false);
+
     if (loading) {
-      // maybe trigger a loading screen here
       return;
     }
     if (user) navigate("/dashboard");
