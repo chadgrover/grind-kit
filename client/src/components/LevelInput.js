@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "React";
 import { TextField, InputAdornment } from "@mui/material";
+import "../styles/Dashboard.css";
 
 function LevelInput({ inputRef }) {
   return (
