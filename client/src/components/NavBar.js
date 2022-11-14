@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { logout } from "../firebase";
 
@@ -8,6 +8,7 @@ function NavBar({ isOpen }) {
       {isOpen === true ? (
         <div>
           <nav>
+            <Link to="/dashboard">Home</Link>
             <Link to="/levelinput">Job Levels</Link>
           </nav>
         </div>

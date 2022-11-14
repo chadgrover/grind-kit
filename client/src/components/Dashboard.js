@@ -10,26 +10,6 @@ function Dashboard ({ setIsOpen }) {
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
 
-  const [paladinLevel, setPaladinLevel] = useState(0);
-  const [warriorLevel, setWarriorLevel] = useState(0);
-  const [darkKnightLevel, setDarkKnightLevel] = useState(0);
-  const [gunbreakerLevel, setGunbreakerLevel] = useState(0);
-  const [whiteMageLevel, setWhiteMageLevel] = useState(0);
-  const [scholarLevel, setScholarLevel] = useState(0);
-  const [astrologianLevel, setAstrologianLevel] = useState(0);
-  const [sageLevel, setSageLevel] = useState(0);
-  const [monkLevel, setMonkLevel] = useState(0);
-  const [dragoonLevel, setDragoonLevel] = useState(0);
-  const [ninjaLevel, setNinjaLevel] = useState(0);
-  const [samuraiLevel, setSamuraiLevel] = useState(0);
-  const [reaperLevel, setReaperLevel] = useState(0);
-  const [bardLevel, setBardLevel] = useState(0);
-  const [machinistLevel, setMachinistLevel] = useState(0);
-  const [dancerLevel, setDancerLevel] = useState(0);
-  const [blackMageLevel, setBlackMageLevel] = useState(0);
-  const [summonerLevel, setSummonerLevel] = useState(0);
-  const [redMageLevel, setRedMageLevel] = useState(0);
-
   const navigate = useNavigate();
 
   const fetchUserName = async () => {
