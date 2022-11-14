@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Login from "./components/Login";
@@ -15,26 +15,7 @@ import "@fontsource/roboto/700.css";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const [paladinLevel, setPaladinLevel] = useState(0);
-  const [warriorLevel, setWarriorLevel] = useState(0);
-  const [darkKnightLevel, setDarkKnightLevel] = useState(0);
-  const [gunbreakerLevel, setGunbreakerLevel] = useState(0);
-  const [whiteMageLevel, setWhiteMageLevel] = useState(0);
-  const [scholarLevel, setScholarLevel] = useState(0);
-  const [astrologianLevel, setAstrologianLevel] = useState(0);
-  const [sageLevel, setSageLevel] = useState(0);
-  const [monkLevel, setMonkLevel] = useState(0);
-  const [dragoonLevel, setDragoonLevel] = useState(0);
-  const [ninjaLevel, setNinjaLevel] = useState(0);
-  const [samuraiLevel, setSamuraiLevel] = useState(0);
-  const [reaperLevel, setReaperLevel] = useState(0);
-  const [bardLevel, setBardLevel] = useState(0);
-  const [machinistLevel, setMachinistLevel] = useState(0);
-  const [dancerLevel, setDancerLevel] = useState(0);
-  const [blackMageLevel, setBlackMageLevel] = useState(0);
-  const [summonerLevel, setSummonerLevel] = useState(0);
-  const [redMageLevel, setRedMageLevel] = useState(0);
+  const inputRef = useRef({});
 
   return (
     <div className="App">
@@ -48,7 +29,10 @@ function App() {
             path="/dashboard"
             element={<Dashboard setIsOpen={setIsOpen} />}
           />
-          <Route path="/levelinput" element={<LevelInput />} />
+          <Route
+            path="/levelinput"
+            element={<LevelInput inputRef={inputRef} />}
+          />
         </Routes>
       </Router>
     </div>
