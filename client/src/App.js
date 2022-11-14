@@ -27,11 +27,7 @@ function App() {
           <Route path="/reset" element={<Reset />} />
           <Route
             path="/dashboard"
-            element={<Dashboard setIsOpen={setIsOpen} />}
-          />
-          <Route
-            path="/levelinput"
-            element={<LevelInput inputRef={inputRef} />}
+            element={<Dashboard inputRef={inputRef} setIsOpen={setIsOpen} />}
           />
         </Routes>
       </Router>

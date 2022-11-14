@@ -8,8 +8,8 @@ function NavBar({ isOpen }) {
       {isOpen === true ? (
         <div>
           <nav>
-            <Link to="/dashboard">Home</Link>
-            <Link to="/levelinput">Job Levels</Link>
+            <Link to="/dashboard">Job Levels</Link>
+            <Link onClick={logout}>Logout</Link>
           </nav>
         </div>
       ) : (
