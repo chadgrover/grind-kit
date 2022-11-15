@@ -23,6 +23,17 @@ function setupServer() {
     }
   });
 
+  app.get("/api/levels", async (req, res) => {
+    try {
+      const data = await db("user_table").select("*").timeout(1500);
+      data.length > 0
+        ? res.status(200).send(data)
+        : res.status(404).send("No data found");
+    } catch (error) {
+      return res.status.send(error);
+    }
+  });
+
   app.get("/api/levels/:id", async (req, res) => {
     const { id } = req.params;
 
