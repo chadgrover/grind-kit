@@ -1,20 +1,19 @@
 import React from "react";
 import { TextField, InputAdornment, Button } from "@mui/material";
-import { Save } from "@mui/icons-material"
+import { Save } from "@mui/icons-material";
 import "../styles/LevelInput.css";
 import axios from "axios";
 
 function LevelInput(props) {
-
   const { inputRef, uid } = props;
 
   const handleSave = async () => {
-    let identifier = {"user_uid": uid}
+    let identifier = { user_uid: uid };
     let levels = inputRef.current;
-    const merged = {...identifier, ...levels}
+    const merged = { ...identifier, ...levels };
 
     await axios.post("/api/levels", merged);
-  }
+  };
 
   return (
     <div className="levelinput">

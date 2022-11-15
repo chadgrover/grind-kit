@@ -4,13 +4,11 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Dashboard.css";
 import { auth, db, logout } from "../firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
-import LevelInput from "./LevelInput";
 
 function Dashboard(props) {
-  const { setIsOpen, inputRef } = props;
+  const { setIsOpen, setUid } = props;
   const [user, loading, error] = useAuthState(auth);
   const [name, setName] = useState("");
-  const [uid, setUid] = useState("");
 
   const navigate = useNavigate();
 
@@ -36,24 +34,16 @@ function Dashboard(props) {
   }, [user, loading]);
 
   return (
-    <div>
-      <div>
-        <LevelInput inputRef={inputRef} uid={uid}/>
+    <div className="dashboard">
+      <div className="dashboard__container">
+        Logged in as
+        <div>{name}</div>
+        <div>{user?.email}</div>
+        <button className="dashboard__btn" onClick={logout}>
+          Logout
+        </button>
       </div>
     </div>
-
-    // OLD
-    
-    // <div className="dashboard">
-    //   <div className="dashboard__container">
-    //     Logged in as
-    //     <div>{name}</div>
-    //     <div>{user?.email}</div>
-    //     <button className="dashboard__btn" onClick={logout}>
-    //       Logout
-    //     </button>
-    //   </div>
-    // </div>
   );
 }
 export default Dashboard;
