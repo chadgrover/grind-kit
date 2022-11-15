@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-import "../styles/ClassSelect.css"
+import "../styles/ClassSelect.css";
+import axios from "axios";
 
-function ClassSelect({setClassSelected}) {
+function ClassSelect(props) {
+  const { setClassSelected, setInstanceContentData } = props;
 
-  const handleClick = () => {
+  const handleClick = async () => {
+    const fetchedInstanceContent = await axios.get("/api/instancecontent");
+    setInstanceContentData(fetchedInstanceContent.data);
     setClassSelected(true);
-  }
+  };
 
   return (
     <div className="classselect">
       <div className="classselect__container">
         <div className="tank__container">
-          <Button variant="contained" onClick={handleClick}>Paladin</Button>
+          <Button variant="contained" onClick={handleClick}>
+            Paladin
+          </Button>
           <Button variant="contained">Warrior</Button>
           <Button variant="contained">Dark Knight</Button>
           <Button variant="contained">Gunbreaker</Button>
