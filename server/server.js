@@ -14,9 +14,7 @@ function setupServer() {
 
   app.get("/api/instancecontent", async (req, res) => {
     try {
-      const data = await db("instancecontent_table")
-        .select("*")
-        .timeout(1500);
+      const data = await db("instancecontent_table").select("*").timeout(1500);
       data.length > 0
         ? res.status(200).send(data)
         : res.status(404).send("No data found");
@@ -25,12 +23,13 @@ function setupServer() {
     }
   });
 
-  app.get("/get-levels", async (req, res) => {
+  app.get("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+
     try {
-      const { uid } = req.body;
       const data = await db("user_table")
         .select("*")
-        .where({ user_id: uid })
+        .where("id", id)
         .timeout(1500);
       data.length > 0
         ? res.status(200).send(data)
@@ -42,15 +41,41 @@ function setupServer() {
 
   // POST
 
-  app.post("/post-levels", async (req, res) => {
+  app.post("/api/levels", async (req, res) => {
     try {
-      const { uid } = req.body;
+      const payload = req.body;
+      const data = await db("user_table").insert(payload).timeout(1500);
+      res.status(201).send("POST was successful");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+
+  // PATCH
+
+  app.patch("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+    const changes = req.body;
+
+    try {
       const data = await db("user_table")
-        .select("*")
-        .where({ user_id: uid })
-        .insert(req.body)
+        .where("id", id)
+        .update(changes)
         .timeout(1500);
-      res.status(201).send("Success");
+      res.status(200).send("PATCH was successful");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+
+  // DELETE
+
+  app.delete("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const data = await db("user_table").where("id", id).del();
+      res.status(200).send("DELETE was successful");
     } catch (error) {
       res.status(500).send(error);
     }
