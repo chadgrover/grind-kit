@@ -21,15 +21,30 @@ function setupServer() {
         ? res.status(200).send(data)
         : res.status(404).send("No data found");
     } catch (error) {
-      res.status(500).send(error);
+      return res.status(500).send(error);
+    }
+  });
+
+  app.get("/get-levels", async (req, res) => {
+    try {
+      const { uid } = req.body;
+      const data = await db("user_table")
+        .select("*")
+        .where({ user_id: uid })
+        .timeout(1500);
+      data.length > 0
+        ? res.status(200).send(data)
+        : res.status(404).send("No data found");
+    } catch (error) {
+      return res.status.send(error);
     }
   });
 
   // POST
 
-  app.post("/post", async (req, res) => {
+  app.post("/post-levels", async (req, res) => {
     try {
-      const { uid } = req;
+      const { uid } = req.body;
       const data = await db("user_table")
         .select("*")
         .where({ user_id: uid })
