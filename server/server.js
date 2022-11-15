@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const db = require("../db/knex");
 const bodyParser = require("body-parser");
+const { count } = require("console");
 
 function setupServer() {
   const app = express();
@@ -30,7 +31,7 @@ function setupServer() {
       const { uid } = req.body;
       const data = await db("user_table")
         .select("*")
-        .where({ user_id: uid })
+        .where({ user_uid: uid })
         .timeout(1500);
       data.length > 0
         ? res.status(200).send(data)
@@ -44,13 +45,36 @@ function setupServer() {
 
   app.post("/post-levels", async (req, res) => {
     try {
+      const payload = req.body;
+      const data = await db("user_table")
+        .insert(payload)
+        .timeout(1500);
+      res.status(201).send("POST was successful");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+
+  // PATCH
+
+  app.patch("/patch-levels", async (req, res) => {
+    try {
       const { uid } = req.body;
+      const changes = req.body;
+      console.log(changes)
+
       const data = await db("user_table")
         .select("*")
-        .where({ user_id: uid })
-        .insert(req.body)
+        .where( { user_uid: uid })
+        .update(changes)
         .timeout(1500);
-      res.status(201).send("Success");
+    
+      if (data) {
+        res.status(200).send("PATCH was successful");
+      } else {
+        res.status(404).send("Record not found");
+      }
+
     } catch (error) {
       res.status(500).send(error);
     }
