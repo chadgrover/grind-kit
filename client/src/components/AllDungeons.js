@@ -10,13 +10,14 @@ function AllDungeons(props) {
         instanceContent.required_level <= currentLevel &&
         instanceContent.required_level !== null
     )
-    .sort((a, b) => b.required_level - a.required_level);
+    .sort((a, b) => b.required_level - a.required_level)
+    .slice(0, 7);
 
   useEffect(() => {
     console.log(filteredInstanceContent);
   }, [filteredInstanceContent]);
 
-  return <div>Test</div>;
+  return <p>Hey</p>;
 }
 
 export default AllDungeons;
