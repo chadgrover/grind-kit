@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function AllDungeons({ instanceContentData }) {
-  const level = 30;
+function AllDungeons(props) {
+  const { instanceContentData, currentLevel } = props;
 
   const names = instanceContentData.filter(
-    (instanceContent) => instanceContent.required_level < level
+    (instanceContent) => instanceContent.required_level < currentLevel
   );
 
   useEffect(() => {

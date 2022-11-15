@@ -4,11 +4,12 @@ import "../styles/ClassSelect.css";
 import axios from "axios";
 
 function ClassSelect(props) {
-  const { setClassSelected, setInstanceContentData } = props;
+  const { setClassSelected, setInstanceContentData, setCurrentLevel, inputRef } = props;
 
-  const handleClick = async () => {
+  const handlePaladinClick = async () => {
     const fetchedInstanceContent = await axios.get("/api/instancecontent");
     setInstanceContentData(fetchedInstanceContent.data);
+    setCurrentLevel(inputRef.current.pld_level)
     setClassSelected(true);
   };
 
@@ -16,7 +17,7 @@ function ClassSelect(props) {
     <div className="classselect">
       <div className="classselect__container">
         <div className="tank__container">
-          <Button variant="contained" onClick={handleClick}>
+          <Button variant="contained" onClick={handlePaladinClick}>
             Paladin
           </Button>
           <Button variant="contained">Warrior</Button>
