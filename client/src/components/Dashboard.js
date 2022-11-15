@@ -38,9 +38,12 @@ function Dashboard(props) {
   return (
     <div>
       <div>
-        <LevelInput inputRef={inputRef} />
+        <LevelInput inputRef={inputRef} uid={uid}/>
       </div>
     </div>
+
+    // OLD
+    
     // <div className="dashboard">
     //   <div className="dashboard__container">
     //     Logged in as
