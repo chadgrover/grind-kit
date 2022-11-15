@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 const db = require("../db/knex");
 const bodyParser = require("body-parser");
-const { count } = require("console");
 
 function setupServer() {
   const app = express();
@@ -15,9 +14,7 @@ function setupServer() {
 
   app.get("/api/instancecontent", async (req, res) => {
     try {
-      const data = await db("instancecontent_table")
-        .select("*")
-        .timeout(1500);
+      const data = await db("instancecontent_table").select("*").timeout(1500);
       data.length > 0
         ? res.status(200).send(data)
         : res.status(404).send("No data found");
@@ -26,12 +23,12 @@ function setupServer() {
     }
   });
 
-  app.get("/get-levels", async (req, res) => {
+  app.get("/api/levels/:id", async (req, res) => {
     try {
-      const { uid } = req.body;
+      const { id } = req.params;
       const data = await db("user_table")
         .select("*")
-        .where({ user_uid: uid })
+        .where("id", id)
         .timeout(1500);
       data.length > 0
         ? res.status(200).send(data)
@@ -43,12 +40,10 @@ function setupServer() {
 
   // POST
 
-  app.post("/post-levels", async (req, res) => {
+  app.post("/api/levels", async (req, res) => {
     try {
       const payload = req.body;
-      const data = await db("user_table")
-        .insert(payload)
-        .timeout(1500);
+      const data = await db("user_table").insert(payload).timeout(1500);
       res.status(201).send("POST was successful");
     } catch (error) {
       res.status(500).send(error);
@@ -57,24 +52,16 @@ function setupServer() {
 
   // PATCH
 
-  app.patch("/patch-levels", async (req, res) => {
-    try {
-      const { uid } = req.body;
-      const changes = req.body;
-      console.log(changes)
+  app.patch("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+    const changes = req.body;
 
+    try {
       const data = await db("user_table")
-        .select("*")
-        .where( { user_uid: uid })
+        .where("id", id)
         .update(changes)
         .timeout(1500);
-    
-      if (data) {
-        res.status(200).send("PATCH was successful");
-      } else {
-        res.status(404).send("Record not found");
-      }
-
+      res.status(200).send("PATCH was successful");
     } catch (error) {
       res.status(500).send(error);
     }
@@ -82,5 +69,7 @@ function setupServer() {
 
   return app;
 }
+
+// DELETE
 
 module.exports = setupServer;
