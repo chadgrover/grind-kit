@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
+import AllDungeons from "./AllDungeons";
 import ClassSelect from "./ClassSelect";
 
 function Session() {
   const [classSelected, setClassSelected] = useState(false);
+  const [instanceContentData, setInstanceContentData] = useState([]);
 
   return (
     <div>
       {classSelected === true ? (
-        <p>Dungeon info goes here</p>
+        <>
+          <AllDungeons instanceContentData={instanceContentData} />
+        </>
       ) : (
         <>
-          <ClassSelect setClassSelected={setClassSelected} />
+          <ClassSelect setClassSelected={setClassSelected} setInstanceContentData={setInstanceContentData} />
         </>
       )}
     </div>
