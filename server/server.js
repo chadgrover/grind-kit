@@ -24,8 +24,9 @@ function setupServer() {
   });
 
   app.get("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+
     try {
-      const { id } = req.params;
       const data = await db("user_table")
         .select("*")
         .where("id", id)
@@ -67,9 +68,20 @@ function setupServer() {
     }
   });
 
+  // DELETE
+
+  app.delete("/api/levels/:id", async (req, res) => {
+    const { id } = req.params;
+
+    try {
+      const data = await db("user_table").where("id", id).del();
+      res.status(200).send("DELETE was successful");
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  });
+
   return app;
 }
-
-// DELETE
 
 module.exports = setupServer;
