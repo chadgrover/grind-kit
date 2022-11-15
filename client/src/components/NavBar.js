@@ -8,13 +8,15 @@ function NavBar({ isOpen }) {
       {isOpen === true ? (
         <div>
           <nav>
-            <Link to="/dashboard">Job Levels</Link>
+            <Link to="/dashboard">Dashboard</Link>
+            <Link to="/levelinput">Input</Link>
+            <Link to="/session">Session</Link>
             <Link onClick={logout}>Logout</Link>
           </nav>
         </div>
       ) : (
         <div>
-          <p>Grind Kit Logo</p>
+          <p>Log-in Page</p>
         </div>
       )}
     </>
