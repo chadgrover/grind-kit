@@ -13,6 +13,7 @@ function LevelInput(props) {
     let levels = inputRef.current;
     const merged = {...identifier, ...levels}
 
+    await axios.post("/api/levels", merged);
   }
 
   return (
