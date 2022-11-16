@@ -8,7 +8,6 @@ import axios from "axios";
 
 function AllDungeons(props) {
   const { instanceContentData, currentLevel } = props;
-  const [bannersArray, setBannersArray] = useState([]);
 
   const filteredInstanceContent = instanceContentData
     .filter(
@@ -17,24 +16,24 @@ function AllDungeons(props) {
         instanceContent.required_level !== null
     )
     .sort((a, b) => b.required_level - a.required_level)
-    .slice(0, 3);
+    .slice(0, 6);
 
-  const handleBannerFetch = async () => {
-    for (const instanceContent of filteredInstanceContent) {
-      const extendedInformation = await axios.get(
-        `https://xivapi.com${instanceContent["url"]}`
-      );
-      setBannersArray(bannersArray => [...bannersArray, extendedInformation.data["Banner"]]);
-    }
-  };
+  // const handleBannerFetch = async () => {
+  //   for (const instanceContent of filteredInstanceContent) {
+  //     const extendedInformation = await axios.get(
+  //       `https://xivapi.com${instanceContent["url"]}`
+  //     );
+  //     setBannersArray(bannersArray => [...bannersArray, extendedInformation.data["Banner"]]);
+  //   }
+  // };
 
-  useEffect(() => {
-    handleBannerFetch();
-  }, []);
+  // useEffect(() => {
+  //   handleBannerFetch();
+  // }, []);
 
-  useEffect(() => {
-    console.log(bannersArray);
-  }, [bannersArray]);
+  // useEffect(() => {
+  //   console.log(bannersArray);
+  // }, [bannersArray]);
 
   return (
     <div>
@@ -42,7 +41,6 @@ function AllDungeons(props) {
         return (
           <Card sx={{ maxWidth: 345 }}>
             <CardActionArea>
-              <CardMedia component="img" height="140" image="" alt="Banner" />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   {instanceContent.name}
