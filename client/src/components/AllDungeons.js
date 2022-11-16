@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
-import axios from "axios";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import Typography from "@mui/material/Typography";
+import { CardActionArea } from "@mui/material";
 
 function AllDungeons(props) {
   const { instanceContentData, currentLevel } = props;
@@ -17,7 +21,32 @@ function AllDungeons(props) {
     console.log(filteredInstanceContent);
   }, [filteredInstanceContent]);
 
-  return <p>Hey</p>;
+  return (
+    <div>
+      {filteredInstanceContent.map((instanceContent) => {
+        return (
+          <Card sx={{ maxWidth: 345 }}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="140"
+                image="/static/images/cards/contemplative-reptile.jpg"
+                alt="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {instanceContent.name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  EXP: {instanceContent.clear_exp}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        );
+      })}
+    </div>
+  );
 }
 
 export default AllDungeons;
