@@ -27,7 +27,7 @@ function LevelInput(props) {
 
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid sx={{ m: 1 }} container spacing={2}>
         <Grid item xs={3}>
           <Card sx={{ maxWidth: 345 }}>
             <CardMedia
