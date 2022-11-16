@@ -1,5 +1,13 @@
-import React, { useState } from "react";
-import { Button } from "@mui/material";
+import React from "react";
+import {
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
 import "../styles/ClassSelect.css";
 import axios from "axios";
 
@@ -131,73 +139,464 @@ function ClassSelect(props) {
   };
 
   return (
-    <div className="classselect">
-      <div className="classselect__container">
-        <div className="tank__container">
-          <Button variant="contained" onClick={handlePaladinClick}>
-            Paladin
-          </Button>
-          <Button variant="contained" onClick={handleWarriorClick}>
-            Warrior
-          </Button>
-          <Button variant="contained" onClick={handleDarkKnightClick}>
-            Dark Knight
-          </Button>
-          <Button variant="contained" onClick={handleGunbreakerClick}>
-            Gunbreaker
-          </Button>
-        </div>
-        <div className="healer__container">
-          <Button variant="contained" onClick={handleWhiteMageClick}>
-            White Mage
-          </Button>
-          <Button variant="contained" onClick={handleScholarClick}>
-            Scholar
-          </Button>
-          <Button variant="contained" onClick={handleAstrologianClick}>
-            Astrologian
-          </Button>
-          <Button variant="contained" onClick={handleSageClick}>
-            Sage
-          </Button>
-        </div>
-        <div className="dps__container">
-          <Button variant="contained" onClick={handleMonkClick}>
-            Monk
-          </Button>
-          <Button variant="contained" onClick={handleDragoonClick}>
-            Dragoon
-          </Button>
-          <Button variant="contained" onClick={handleNinjaClick}>
-            Ninja
-          </Button>
-          <Button variant="contained" onClick={handleSamuraiClick}>
-            Samurai
-          </Button>
-          <Button variant="contained" onClick={handleReaperClick}>
-            Reaper
-          </Button>
-          <Button variant="contained" onClick={handleBardClick}>
-            Bard
-          </Button>
-          <Button variant="contained" onClick={handleMachinistClick}>
-            Machinist
-          </Button>
-          <Button variant="contained" onClick={handleDancerClick}>
-            Dancer
-          </Button>
-          <Button variant="contained" onClick={handleBlackMageClick}>
-            Black Mage
-          </Button>
-          <Button variant="contained" onClick={handleSummonerClick}>
-            Summoner
-          </Button>
-          <Button variant="contained" onClick={handleRedMageClick}>
-            Red Mage
-          </Button>
-        </div>
-      </div>
-    </div>
+    <Grid container spacing={2}>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/pld.jpg")}
+            alt="Paladin Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Paladin
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Paladin description
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handlePaladinClick}>
+              Paladin
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/war.jpg")}
+            alt="Warrior Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Warrior
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Warrior description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleWarriorClick}>
+              Warrior
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/drk.jpg")}
+            alt="Dark Knight Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Dark Knight
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Dark Knight description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleDarkKnightClick}>
+              Dark Knight
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/gnb.jpg")}
+            alt="Gunbreaker Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Gunbreaker
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Gunbreaker description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleGunbreakerClick}>
+              Gunbreaker
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/whm.jpg")}
+            alt="White Mage Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              White Mage
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              White Mage description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleWhiteMageClick}>
+              White Mage
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/sch.jpg")}
+            alt="Scholar Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Scholar
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Scholar description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleScholarClick}>
+              Scholar
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/ast.jpg")}
+            alt="Astrologian Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Astrologian
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Astrologian description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleAstrologianClick}>
+              Astrologian
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/sge.jpg")}
+            alt="Sage Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Sage
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Sage description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleSageClick}>
+              Sage
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/mnk.jpg")}
+            alt="Monk Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Monk
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Monk description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleMonkClick}>
+              Monk
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/drg.jpg")}
+            alt="Dragoon Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Dragoon
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Dragoon description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleDragoonClick}>
+              Dragoon
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/nin.jpg")}
+            alt="Ninja Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Ninja
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Ninja description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleNinjaClick}>
+              Ninja
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/sam.jpg")}
+            alt="Samurai Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Samurai
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Samurai description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleSamuraiClick}>
+              Samurai
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/rpr.jpg")}
+            alt="Reaper Sprite"
+            sx={{ objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Reaper
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Reaper description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleReaperClick}>
+              Reaper
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/brd.jpg")}
+            alt="Bard Sprite"
+            sx={{ objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Bard
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Bard description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleBardClick}>
+              Bard
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/mch.jpg")}
+            alt="Machinist Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Machinist
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Machinist description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleMachinistClick}>
+              Machinist
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/dnc.jpg")}
+            alt="Dancer Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Dancer
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Dancer description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleDancerClick}>
+              Dancer
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/blm.jpg")}
+            alt="Black Mage Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Black Mage
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Black Mage description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleBlackMageClick}>
+              Black Mage
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/smn.jpg")}
+            alt="Summoner Sprite"
+            sx={{ objectPosition: "center", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Summoner
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Summoner description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleSummonerClick}>
+              Summoner
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+      <Grid item xs={3}>
+        <Card sx={{ maxWidth: 345 }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image={require("../images/rdm.jpg")}
+            alt="Red Mage Sprite"
+            sx={{ objectPosition: "top", objectFit: "cover" }}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              Red Mage
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Red Mage description goes here
+            </Typography>
+          </CardContent>
+          <CardActions>
+            <Button variant="contained" onClick={handleRedMageClick}>
+              Red Mage
+            </Button>
+          </CardActions>
+        </Card>
+      </Grid>
+    </Grid>
   );
 }
 
