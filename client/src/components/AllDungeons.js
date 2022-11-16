@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { CardActionArea } from "@mui/material";
-import axios from "axios";
+import React from "react";
+import {
+  Card,
+  CardContent,
+  CardActionArea,
+  Typography,
+  Grid,
+} from "@mui/material";
 
 function AllDungeons(props) {
   const { instanceContentData, currentLevel } = props;
@@ -37,25 +38,29 @@ function AllDungeons(props) {
 
   return (
     <div>
-      {filteredInstanceContent.map((instanceContent) => {
-        return (
-          <Card sx={{ maxWidth: 345 }}>
-            <CardActionArea>
-              <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                  {instanceContent.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Required Level: {instanceContent.required_level}
-                </Typography>
-                <Typography variant="body3" color="text.secondary">
-                  {instanceContent.clear_exp} EXP upon completion
-                </Typography>
-              </CardContent>
-            </CardActionArea>
-          </Card>
-        );
-      })}
+      <Grid sx={{ m: 1 }} container spacing={2}>
+        {filteredInstanceContent.map((instanceContent) => {
+          return (
+            <Grid item xs={3}>
+              <Card sx={{ maxWidth: 345 }}>
+                <CardActionArea>
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {instanceContent.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      Required Level: {instanceContent.required_level}
+                    </Typography>
+                    <Typography variant="body3" color="text.secondary">
+                      {instanceContent.clear_exp} EXP upon completion
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          );
+        })}
+      </Grid>
     </div>
   );
 }
