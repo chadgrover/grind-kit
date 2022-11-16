@@ -42,7 +42,9 @@ function LevelInput(props) {
                 Paladin
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Paladin description
+                These loyal guardians are skilled with sword and shield,
+                channeling upon holy power to stand as unbreakable walls for
+                their allies, and symbolizes hope among their people.
               </Typography>
             </CardContent>
             <CardActions>
@@ -80,7 +82,9 @@ function LevelInput(props) {
                 Warrior
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Warrior description goes here
+                Wielding greataxes they can unleash magnificent damage to block
+                enemies from reaching their brothers-in-arms, while excelling in
+                the art of causing pain.
               </Typography>
             </CardContent>
             <CardActions>
@@ -118,7 +122,9 @@ function LevelInput(props) {
                 Dark Knight
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Dark Knight description goes here
+                These dark, yet valiant knights bask in the darkness to empower
+                themselves seeking to deliver justice and protection to the
+                people of Ishgard.
               </Typography>
             </CardContent>
             <CardActions>
@@ -156,7 +162,8 @@ function LevelInput(props) {
                 Gunbreaker
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Gunbreaker description goes here
+                <strong>Gunbreaker</strong> is a Tank job released in
+                Shadowbringers expansion.
               </Typography>
             </CardContent>
             <CardActions>
@@ -194,7 +201,8 @@ function LevelInput(props) {
                 White Mage
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                White Mage description goes here
+                In the midst of war, battles, and catastrophes, white mages come
+                to move their allies forward with the touch of divine light.
               </Typography>
             </CardContent>
             <CardActions>
@@ -232,7 +240,8 @@ function LevelInput(props) {
                 Scholar
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Scholar description goes here
+                Only the scholars may command their conjured faeries to cast
+                healing abilities and restore their fellows in battle.
               </Typography>
             </CardContent>
             <CardActions>
@@ -270,7 +279,8 @@ function LevelInput(props) {
                 Astrologian
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Astrologian description goes here
+                By attuning to the constellations, astrologians can draw cards
+                to unveil mystical magicks to aid their allies in battle.
               </Typography>
             </CardContent>
             <CardActions>
@@ -308,7 +318,8 @@ function LevelInput(props) {
                 Sage
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Sage description goes here
+                <strong>Sages</strong> are a Disciple of Magic job introduced in
+                Endwalker, who heals and protects the party with barriers.
               </Typography>
             </CardContent>
             <CardActions>
@@ -346,7 +357,9 @@ function LevelInput(props) {
                 Monk
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Monk description goes here
+                Their moves include all sorts of fast sequenced physical combos,
+                with a flurry of punches and kicks which build up even greater
+                strength as they unlock their inner chakra.
               </Typography>
             </CardContent>
             <CardActions>
@@ -384,7 +397,9 @@ function LevelInput(props) {
                 Dragoon
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Dragoon description goes here
+                <strong>Dragoons</strong> are fierce combatants who draw their
+                battling techniques from Ishgard's long conflict against
+                dragons.
               </Typography>
             </CardContent>
             <CardActions>
@@ -422,7 +437,8 @@ function LevelInput(props) {
                 Ninja
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Ninja description goes here
+                <strong>Ninjas</strong> learn the secret arts of ninjutsu to
+                turn the tide of the fight when their prey less expects.
               </Typography>
             </CardContent>
             <CardActions>
@@ -460,7 +476,9 @@ function LevelInput(props) {
                 Samurai
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Samurai description goes here
+                These fierce honorable men and women wield their katanas,
+                weaving through moves of past eras to strive and kill before the
+                enemy strikes their people.
               </Typography>
             </CardContent>
             <CardActions>
@@ -498,7 +516,9 @@ function LevelInput(props) {
                 Reaper
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Reaper description goes here
+                <strong>Reapers</strong> are a Disciple of War who wields a
+                scythe for dynamic close-quarter combat and calls upon an avatar
+                from the void to join in battle.
               </Typography>
             </CardContent>
             <CardActions>
@@ -536,7 +556,9 @@ function LevelInput(props) {
                 Bard
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Bard description goes here
+                Born as archers, these minstrels learned how to evoke magicks to
+                empower their allies' spirits, greatly boosting their prowess in
+                battle.
               </Typography>
             </CardContent>
             <CardActions>
@@ -574,7 +596,8 @@ function LevelInput(props) {
                 Machinist
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Machinist description goes here
+                <strong>Machinists</strong> are artificers specialized into
+                building all sorts of mechanical equipment to use in battle.
               </Typography>
             </CardContent>
             <CardActions>
@@ -612,7 +635,8 @@ function LevelInput(props) {
                 Dancer
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Dancer description goes here
+                <strong>Dancers</strong> are Disciple of War that uses Throwing
+                Weapons to deal damage to targets from afar.
               </Typography>
             </CardContent>
             <CardActions>
@@ -650,7 +674,8 @@ function LevelInput(props) {
                 Black Mage
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Black Mage description goes here
+                <strong>Black Mages</strong> extrapolate the dark arts of black
+                magic, granting themselves a wide range of destructive spells.
               </Typography>
             </CardContent>
             <CardActions>
@@ -688,7 +713,8 @@ function LevelInput(props) {
                 Summoner
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Summoner description goes here
+                <strong>Summoners</strong> are mystical mages who have harnessed
+                the lost art of invoking primals.
               </Typography>
             </CardContent>
             <CardActions>
@@ -726,7 +752,8 @@ function LevelInput(props) {
                 Red Mage
               </Typography>
               <Typography variant="body2" color="text.secondary">
-                Red Mage description goes here
+                These fierce mages combine black and white magic to twist the
+                battlefield, and strive where others otherwise would fail.
               </Typography>
             </CardContent>
             <CardActions>

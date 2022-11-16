@@ -9,7 +9,7 @@ function NavBar({ isOpen }) {
     <>
       {isOpen === true ? (
         <div className="navbar">
-          <AppBar position="static">
+          <AppBar position="static" color="primary">
             <Toolbar>
               <div className="logo">
                 <Typography variant="h4">Grind Kit</Typography>
@@ -27,7 +27,7 @@ function NavBar({ isOpen }) {
                 </li>
                 <li className="nav-item">
                   <Link style={{ textDecoration: 'none' }} to="/session">
-                    Dungeons
+                    Recommendations
                   </Link>
                 </li>
                 <li className="nav-item">
