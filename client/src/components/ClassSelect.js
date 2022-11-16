@@ -138,11 +138,15 @@ function ClassSelect(props) {
     setClassSelected(true);
   };
 
+  const cardStyle = {
+    height: "100%"
+  }
+
   return (
     <div>
       <Grid sx={{ m: 1 }} container spacing={2}>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -166,7 +170,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -190,7 +194,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -214,7 +218,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -238,7 +242,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -262,7 +266,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -286,7 +290,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -310,7 +314,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -334,7 +338,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -358,7 +362,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -382,7 +386,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -406,7 +410,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -430,7 +434,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -454,7 +458,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -478,7 +482,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -502,7 +506,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -526,7 +530,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -550,7 +554,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"
@@ -574,7 +578,7 @@ function ClassSelect(props) {
           </Card>
         </Grid>
         <Grid item xs={3}>
-          <Card sx={{ maxWidth: 345 }}>
+          <Card style={cardStyle} sx={{ maxWidth: 345 }}>
             <CardMedia
               component="img"
               height="140"

@@ -16,22 +16,22 @@ function NavBar({ isOpen }) {
               </div>
               <ul className="nav-links">
                 <li className="nav-item">
-                  <Link style={{ textDecoration: 'none' }} to="/dashboard">
+                  <Link style={{ textDecoration: "none" }} to="/dashboard">
                     Dashboard
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link style={{ textDecoration: 'none' }} to="/levelinput">
+                  <Link style={{ textDecoration: "none" }} to="/levelinput">
                     Job Levels
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link style={{ textDecoration: 'none' }} to="/session">
+                  <Link style={{ textDecoration: "none" }} to="/session">
                     Recommendations
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link style={{ textDecoration: 'none' }} onClick={logout}>
+                  <Link style={{ textDecoration: "none" }} onClick={logout}>
                     Logout
                   </Link>
                 </li>
@@ -40,8 +40,14 @@ function NavBar({ isOpen }) {
           </AppBar>
         </div>
       ) : (
-        <div>
-          <p>Log-in Page</p>
+        <div className="navbar">
+          <AppBar position="static" color="primary">
+            <Toolbar>
+              <div className="logo">
+                <Typography variant="h4">Grind Kit</Typography>
+              </div>
+            </Toolbar>
+          </AppBar>
         </div>
       )}
     </>

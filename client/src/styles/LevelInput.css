@@ -1,3 +1,4 @@
-image {
-    height: 75%;
+.button__container {
+    display: flex;
+    justify-content: center;
 }
